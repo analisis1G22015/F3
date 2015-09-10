@@ -5,11 +5,12 @@ class carrito {
    	var $array_id_prod;
    	var $array_nombre_prod;
    	var $array_precio_prod;
-
+   	Var $suma_total;
 	//constructor. Realiza las tareas de inicializar los objetos cuando se instancian
 	//inicializa el numero de productos a 0
 	function carrito () {
    		$this->num_productos=0;
+   		$this->suma_total=0;
 	}
 	
 	//Introduce un producto en el carrito. Recibe los datos del producto
@@ -42,6 +43,7 @@ class carrito {
 				$suma += $this->array_precio_prod[$i];
 			}
 		}
+		$suma_total=$suma;
 		//muestro el total
 		echo "<tr><td><b>TOTAL:</b></td><td> <b>$suma</b></td><td>&nbsp;</td></tr>";
 		//total más IVA
