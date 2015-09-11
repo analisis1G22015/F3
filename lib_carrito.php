@@ -56,6 +56,19 @@ class carrito {
 	function elimina_producto($linea){
 		$this->array_id_prod[$linea]=0;
 	}
+
+	function get_id_producto($linea){	   	
+		if($this->array_id_prod[$linea]!=0)
+			return $this->array_id_prod[$linea];
+		else
+			return null;
+	}
+	function get_nombre_producto($linea){	   	
+		if($this->array_id_prod[$linea]!=0)
+			return $this->array_nombre_prod[$linea];
+		else
+			return null;
+	}
 } 
 //inicio la sesión
 session_start();

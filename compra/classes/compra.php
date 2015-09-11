@@ -1,12 +1,12 @@
 <?php
-//require '../lib_carrito.php';
-//require("banco_test.php");
+include("../lib_carrito.php");
+include("banco_test.php");
 class compras{
 	var $banco;
 	var $carrito10;
 	var $usuario;
 	function compras(){
-		$banco=new banco;
+		$banco=new banco();
 		if (isset($_SESSION["ocarrito"])){
 			$carrito10=$_SESSION["ocarrito"];
 		}		
@@ -22,7 +22,6 @@ class compras{
 			$carrito10->get_id_producto($i);
 			//comprobar existencia
 			$carrito10->elimina_producto($i);
-			echo "hola.";
 		}		
 	}
 
