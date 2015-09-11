@@ -18,12 +18,16 @@ class compras{
 	//	if($banco->comprobar_saldo_tarjet($usuario->numero_tarjeta,$usuario->fecha_vencimiento,$usuario->codigo_seguridad,$usuario->nombre,$carrito->suma_total))
 	//		echo "<p>Si puede realizarse la compra</p>";
 	//	return true;
-		for($i=0;$i<$carrito10->num_productos;$i++){
+	    $limite=$carrito10->num_productos;
+		for($i=0;$i<$limite;$i++){
+		    echo $i;
 			$carrito10->get_id_producto($i);
 			//comprobar existencia
 			$carrito10->elimina_producto($i);
 			echo "hola.";
-		}		
+			$carrito10->num_productos--;
+		}	
+		$_SESSION["ocarrito"]=$carrito10;
 	}
 
 
