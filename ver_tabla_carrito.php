@@ -109,22 +109,22 @@
 					<tbody>
 					<?
 					$suma = 0;
-					for ($i=0;$i<$_SESSION["ocarrito"]->num_productos;$i++){
-						if($_SESSION["ocarrito"]->array_id_prod[$i]!=0){
-							$id=$_SESSION["ocarrito"]->array_id_prod[$i];
-							$contenido=$contenido.$id.",".$_SESSION["ocarrito"]->array_nombre_prod[$i].".";
-							$suma += $_SESSION["ocarrito"]->array_precio_prod[$i];
+					for ($i=0;$i<$_SESSION["usuario_carro"]->num_productos;$i++){
+						if($_SESSION["usuario_carro"]->array_id_prod[$i]!=0){
+							$id=$_SESSION["usuario_carro"]->array_id_prod[$i];
+							$contenido=$contenido.$id.",".$_SESSION["usuario_carro"]->array_nombre_prod[$i].".";
+							$suma += $_SESSION["usuario_carro"]->array_precio_prod[$i];
 					?>
 						<tr>
 							<td class="cart_product">
 								<a href=""><img src=<?php echo $img; ?> alt="" ></a>
 							</td>
 							<td class="cart_description">
-								<h4><?php echo $_SESSION["ocarrito"]->array_nombre_prod[$i]; ?></h4>
+								<h4><?php echo $_SESSION["usuario_carro"]->array_nombre_prod[$i]; ?></h4>
 								<p></p>
 							</td>
 							<td class="cart_price">
-								<p><? echo "Q.".$_SESSION["ocarrito"]->array_precio_prod[$i]; ?></p>
+								<p><? echo "Q.".$_SESSION["usuario_carro"]->array_precio_prod[$i]; ?></p>
 							</td>
 							<td class="cart_quantity">
 							</td>

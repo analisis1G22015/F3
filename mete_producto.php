@@ -1,6 +1,7 @@
 <?
-include("lib_carrito.php");
-$_SESSION["ocarrito"]->introduce_producto($_GET["id"], $_GET["nombre"], $_GET["precio"]);
+include ("lib_carrito.php");
+//$_SESSION["ocarrito"]->introduce_producto($_GET["id"], $_GET["nombre"], $_GET["precio"]);
+$_SESSION["usuario_carro"]->introduce_producto($_GET["id"], $_GET["nombre"], $_GET["precio"]);
 ?>
 
 <html>

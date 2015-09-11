@@ -26,7 +26,7 @@ $con = @mysql_connect($host,$user,$pass);
 mysql_select_db($db); 
 
 //establecemos condiciones de paginacion 
-$registros = 9; 
+$registros = $_POST['nombre']; 
 
 @$pagina = $_GET ['pagina']; 
 
