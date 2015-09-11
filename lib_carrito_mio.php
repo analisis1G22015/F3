@@ -1,12 +1,11 @@
 <?
-session_start();
 class carrito {
 	//atributos de la clase
    	var $num_productos;
    	var $array_id_prod;
    	var $array_nombre_prod;
    	var $array_precio_prod;
-	Var $suma_total;
+   	Var $suma_total;
 	//constructor. Realiza las tareas de inicializar los objetos cuando se instancian
 	//inicializa el numero de productos a 0
 	function carrito () {
@@ -44,6 +43,7 @@ class carrito {
 				$suma += $this->array_precio_prod[$i];
 			}
 		}
+		$suma_total=$suma;
 		//muestro el total
 		echo "<tr><td><b>TOTAL:</b></td><td> <b>$suma</b></td><td>&nbsp;</td></tr>";
 		//total más IVA
@@ -56,6 +56,7 @@ class carrito {
 	function elimina_producto($linea){
 		$this->array_id_prod[$linea]=0;
 	}
+
 	function get_id_producto($linea){	   	
 		if($this->array_id_prod[$linea]!=0)
 			return $this->array_id_prod[$linea];
@@ -69,5 +70,10 @@ class carrito {
 			return null;
 	}
 } 
-
+//inicio la sesión
+session_start();
+//si no esta creado el objeto carrito en la sesion, lo creo
+if (!isset($_SESSION["ocarrito"])){
+	$_SESSION["ocarrito"] = new carrito();
+}
 ?>
