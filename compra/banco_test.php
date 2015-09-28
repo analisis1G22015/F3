@@ -1,6 +1,6 @@
 <?php
 class banco{
-		function comprobar_saldo_tarjeta($numero_tarjeta,$nombre_titular,$monto_necesario){
+	  function comprobar_saldo_tarjeta($numero_tarjeta,$nombre_titular,$monto_necesario){
 	  //MOCK CONSULTA DE LA BASE DE DATOS DEL BANCO
 	  if($nombre_titular==111){ //cliente encontrado
 	      if($numero_tarjeta==1){//no. tarjeta encontrada
